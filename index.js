@@ -41,7 +41,13 @@ app.use('/uploads',express.static('uploads'));
 const allRoute=require('./app/router/authRouter')
 app.use('/api',allRoute)
 
+// ... existing imports
+const authRoute = require('./app/router/authRouter');
+const apiRoute = require('./app/router/apiRouter');
 
+// ... existing middleware
+app.use('/api', authRoute);
+app.use('/api/property', apiRoute);
 
 const PORT=process.env.PORT || 3006
 

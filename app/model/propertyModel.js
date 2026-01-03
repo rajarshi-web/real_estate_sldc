@@ -34,7 +34,7 @@ const propertySchema = new mongoose.Schema(
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // agent
-      required: true,
+      required: false,
     },
   },
   { timestamps: true }
